@@ -29,8 +29,8 @@ output "nginx_ingress_lb_dns" {
 }
 
 output "route53_name_servers" {
-  description = "Route53 nameservers - add these to Namecheap"
-  value       = module.namecheap-deployment.route53_name_servers
+  description = "Route53 nameservers - add these to Hostinger"
+  value       = module.dns-deployment.route53_name_servers
 }
 
 output "rds_endpoint" {
