@@ -34,15 +34,15 @@ module "eks-deployment" {
   email              = var.email
 }
 
-# DNS module - enabled with Route53
+# DNS module - Route53
 module "dns-deployment" {
   source = "./module-dns"
 
   environment                          = var.environment
   domain-name                          = var.domain-name
+  nginx_ingress_lb_dns                 = module.eks-deployment.nginx_ingress_lb_dns
   nginx_lb_ip                          = module.eks-deployment.nginx_lb_ip
   nginx_ingress_load_balancer_hostname = module.eks-deployment.nginx_ingress_load_balancer_hostname
-  nginx_ingress_lb_dns                 = module.eks-deployment.nginx_ingress_lb_dns
 }
 
 # Creating RDS MySQL database
