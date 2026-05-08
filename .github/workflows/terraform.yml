@@ -4,13 +4,9 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '**.tf'
   pull_request:
     branches:
       - main
-    paths:
-      - '**.tf'
 
 env:
   AWS_REGION: us-east-1

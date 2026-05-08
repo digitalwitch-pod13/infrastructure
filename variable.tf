@@ -3,7 +3,11 @@ variable "vpc_cidrblock" {
   type        = string
   default     = "192.168.0.0/16"
 }
-
+variable "aws_region" {
+  description = "AWS region"
+  type        = string
+  default     = "us-east-1"
+}
 variable "environment" {
   description = "Environment name (e.g., dev, staging, prod)"
   type        = string
