@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket  = "servimatch-tfstate"
-    key     = "servimatch/dev/terraform.tfstate"
+    bucket  = "bank-app-terraform-state"
+    key     = "pod13fintech/dev/terraform.tfstate"
     region  = "us-east-1"
     encrypt = true
   }
