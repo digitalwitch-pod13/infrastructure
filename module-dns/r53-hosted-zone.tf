@@ -10,6 +10,7 @@ resource "aws_route53_zone" "r53_zone" {
 }
 
 resource "aws_route53_record" "frontend" {
+  count   = var.nginx_ingress_lb_dns != "" ? 1 : 0
   zone_id = aws_route53_zone.r53_zone.zone_id
   name    = "bank.${var.domain-name}"
   type    = "CNAME"
@@ -18,6 +19,7 @@ resource "aws_route53_record" "frontend" {
 }
 
 resource "aws_route53_record" "backend" {
+  count   = var.nginx_ingress_lb_dns != "" ? 1 : 0
   zone_id = aws_route53_zone.r53_zone.zone_id
   name    = "bankapi.${var.domain-name}"
   type    = "CNAME"
@@ -26,6 +28,7 @@ resource "aws_route53_record" "backend" {
 }
 
 resource "aws_route53_record" "argocd" {
+  count   = var.nginx_ingress_lb_dns != "" ? 1 : 0
   zone_id = aws_route53_zone.r53_zone.zone_id
   name    = "argocd.${var.domain-name}"
   type    = "CNAME"
