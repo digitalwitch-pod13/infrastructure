@@ -20,15 +20,15 @@ output "node_security_group_id" {
 
 output "nginx_ingress_lb_dns" {
   description = "DNS name of the Nginx Ingress Load Balancer"
-  value       = "Available after Nginx Ingress is deployed"
+  value       = ""
 }
 
 output "nginx_lb_ip" {
   description = "IP of the Nginx Ingress Load Balancer"
-  value       = "Available after Nginx Ingress is deployed"
+  value       = ""
 }
 
 output "nginx_ingress_load_balancer_hostname" {
   description = "Hostname of the Nginx Ingress Load Balancer"
-  value       = "Available after Nginx Ingress is deployed"
+  value       = ""
 }
